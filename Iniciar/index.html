@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eternal Realms - Medieval Fantasy</title>
+    <!-- Importar fuente medieval de Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=MedievalSharp&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- Intro -->
+    <div id="intro-container">
+        
+        <video id="intro-video"
+            src="https://github.com/dfaparicio/ProyectoVideoJuego/releases/download/v1.1.1.1.1/Intro1.mp4"></video>
+
+        <div class="input-group">
+            <p class="intro-lore">
+                En un mundo olvidado por los dioses, solo los valientes recuerdan su nombre...
+            </p>
+
+            <div class="input-wrapper">
+                <input type="text" id="username" placeholder="Escribe tu nombre de héroe....." autocomplete="off" />
+                <button id="dice-btn" title="Nombre aleatorio">🎲</button>
+            </div>
+            <small id="warning-text">Debes ingresar tu nombre </small>
+        </div>
+
+
+
+        <button id="accept-btn">Aceptar</button>
+        <p id="skip-text" style="display:none;">Omitir</p>
+    </div>
+
+
+
+
+    <div class="Portada" style="display:none;">
+
+        <video id="bg-video"
+            src="https://github.com/dfaparicio/ProyectoVideoJuego/releases/download/V1.1.1.1.0/IntroFondo1.mp4" autoplay
+            muted loop></video>
+
+
+        <audio id="bg-music"
+            src="https://github.com/dfaparicio/ProyectoVideoJuego/releases/download/V1.1.1.1.2/MusicFondo.mp3"
+            loop></audio>
+
+        <div id="Informacion"></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,582 @@
+ /* MARCOS PARA HÉROES */
+ * {
+     font-family: 'Cinzel', serif;
+     color: #e7d9c4;
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+ }
+
+
+ /* Sección de marcos */
+ .marcos-seccion {
+     background: rgba(0, 0, 0);
+     border-radius: 15px;
+     box-shadow: 0 0 25px rgba(139, 69, 19, 0.5);
+     border: 2px solid #7a5c2d;
+     backdrop-filter: blur(4px);
+     padding: 30px;
+     width: 90%;
+     max-width: 1200px;
+     text-align: center;
+     margin-bottom: 40px;
+ }
+
+ .marcos-seccion h2 {
+     font-size: 2.5rem;
+     margin-bottom: 40px;
+     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+     border-bottom: 2px solid #7a5c2d;
+     padding-bottom: 15px;
+     letter-spacing: 3px;
+ }
+
+ .marcos-container {
+     display: grid;
+     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+     gap: 40px;
+     justify-content: center;
+ }
+
+ /* Estilos base para todas las cartas */
+ .carta {
+     background: linear-gradient(145deg, rgba(73, 54, 19, 0.7), rgba(34, 25, 10, 0.7));
+     border-radius: 15px;
+     padding: 25px;
+     transition: all 0.3s ease;
+     position: relative;
+     overflow: hidden;
+     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+     min-height: 380px;
+     display: flex;
+     flex-direction: column;
+ }
+
+ .carta-titulo {
+     font-size: 1.6rem;
+     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+     letter-spacing: 2px;
+     margin-bottom: 15px;
+     text-align: center;
+ }
+
+ .carta-descripcion {
+     font-family: 'MedievalSharp', cursive;
+     font-size: 1.1rem;
+     line-height: 1.5;
+     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+     margin-bottom: 20px;
+     text-align: center;
+     flex-grow: 1;
+ }
+
+
+
+
+
+
+#Marco1, #Marco2, #Marco3 {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden; /* Para que el brillo no se salga */
+    animation: flotar 4s ease-in-out infinite;
+}
+
+#Marco1:hover,
+#Marco2:hover,
+#Marco3:hover {
+    animation: pulsarGlowPlata 2s ease-in-out infinite alternate;
+    transform: translateY(-4px) scale(1.02); /* Menor desplazamiento y escala */
+    box-shadow:
+        0 0 8px 3px rgba(192, 192, 192, 0.7),
+        0 10px 20px rgba(192, 192, 192, 0.3); /* Sombras más suaves */
+}
+
+/* Animación de flotación lenta */
+@keyframes flotar {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Animación de pulsación de sombra con efecto plata */
+@keyframes pulsarGlowPlata {
+    0%, 100% {
+        box-shadow:
+            0 0 5px 2px rgba(220, 220, 220, 0.5),
+            0 8px 15px rgba(220, 220, 220, 0.3);
+        filter: drop-shadow(0 0 3px rgba(220, 220, 220, 0.4));
+    }
+    50% {
+        box-shadow:
+            0 0 12px 4px rgba(235, 235, 255, 0.8),
+            0 15px 30px rgba(235, 235, 255, 0.5);
+        filter: drop-shadow(0 0 5px rgba(235, 235, 255, 0.6));
+    }
+}
+
+/* Efecto shine (brillo que pasa) */
+#Marco1:hover::before,
+#Marco2:hover::before,
+#Marco3:hover::before {
+    content: '';
+    position: absolute;
+    top: 0; left: -75%;
+    width: 40%; /* brillo más pequeño */
+    height: 100%;
+    background: linear-gradient(
+        120deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(210, 220, 255, 0.8) 100%, /* brillo menos intenso */
+        rgba(255, 255, 255, 0.5) 100%
+    );
+    transform: skewX(-25deg);
+    animation: shine 1.5s ease-in-out forwards;
+    pointer-events: none;
+}
+
+@keyframes shine {
+    0% {
+        left: -75%;
+    }
+    100% {
+        left: 125%;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ /* Marco Héroe 1: Caballero Radiante */
+ .marco-radiante {
+     border: 3px solid #f9d71c;
+     background: url(OMG/card2.png);
+     background-size: cover;
+     background-position: center;
+     background-repeat: no-repeat;
+     box-shadow: 0 0 15px rgba(249, 215, 28, 0.5), inset 0 0 20px rgba(249, 215, 28, 0.3);
+     position: relative;
+ }
+
+ .marco-radiante1 {
+     border: 3px solid #f9d71c;
+     background: url(OMG/card3.png);
+     background-size: cover;
+     background-position: center;
+     background-repeat: no-repeat;
+     box-shadow: 0 0 15px rgba(249, 215, 28, 0.5), inset 0 0 20px rgba(249, 215, 28, 0.3);
+     position: relative;
+ }
+
+  .marco-radiante2 {
+     border: 3px solid #f9d71c;
+     background: url(OMG/card5.png);
+     background-size: cover;
+     background-position: center;
+     background-repeat: no-repeat;
+     box-shadow: 0 0 15px rgba(249, 215, 28, 0.5), inset 0 0 20px rgba(249, 215, 28, 0.3);
+     position: relative;
+ }
+
+ .marco-radiante::before {
+     content: '';
+     position: absolute;
+     top: 10px;
+     left: 10px;
+     right: 10px;
+     bottom: 10px;
+
+     border-radius: 10px;
+     pointer-events: none;
+ }
+
+
+
+ .marco-radiante .sol {
+     position: absolute;
+     width: 30px;
+     height: 30px;
+     background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath fill='%23f9d71c' d='M20 2l-4 4 8 10-4 4L10 10 6 14l12 10-10 10 4 4 10-10 4 4-10 10 4 4 10-10 10 10 4-4-10-10 4-4 10 10 4-4-10-10 12-10-4-4-10 10-4-4 8-10-4-4-8 10z'/%3E%3C/svg%3E");
+     background-size: contain;
+     background-repeat: no-repeat;
+     animation: flotarSol 3s ease-in-out infinite;
+     filter: drop-shadow(0 0 6px rgba(249, 215, 28, 0.7));
+     opacity: 0.8;
+ }
+  .marco-radiante .sol1 {
+     position: absolute;
+     width: 30px;
+     height: 30px;
+     background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath fill='%23f9d71c' d='M20 2l-4 4 8 10-4 4L10 10 6 14l12 10-10 10 4 4 10-10 4 4-10 10 4 4 10-10 10 10 4-4-10-10 4-4 10 10 4-4-10-10 12-10-4-4-10 10-4-4 8-10-4-4-8 10z'/%3E%3C/svg%3E");
+     background-size: contain;
+     background-repeat: no-repeat;
+     animation: flotarSol 3s ease-in-out infinite;
+     filter: drop-shadow(0 0 6px rgba(249, 215, 28, 0.7));
+     opacity: 0.8;
+ }
+  .marco-radiante .sol {
+     position: absolute;
+     width: 30px;
+     height: 30px;
+     background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath fill='%23f9d71c' d='M20 2l-4 4 8 10-4 4L10 10 6 14l12 10-10 10 4 4 10-10 4 4-10 10 4 4 10-10 10 10 4-4-10-10 4-4 10 10 4-4-10-10 12-10-4-4-10 10-4-4 8-10-4-4-8 10z'/%3E%3C/svg%3E");
+     background-size: contain;
+     background-repeat: no-repeat;
+     animation: flotarSol 3s ease-in-out infinite;
+     filter: drop-shadow(0 0 6px rgba(249, 215, 28, 0.7));
+     opacity: 0.8;
+ }
+
+  .marco-radiante1 .sol {
+     position: absolute;
+     width: 30px;
+     height: 30px;
+     background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath fill='%23f9d71c' d='M20 2l-4 4 8 10-4 4L10 10 6 14l12 10-10 10 4 4 10-10 4 4-10 10 4 4 10-10 10 10 4-4-10-10 4-4 10 10 4-4-10-10 12-10-4-4-10 10-4-4 8-10-4-4-8 10z'/%3E%3C/svg%3E");
+     background-size: contain;
+     background-repeat: no-repeat;
+     animation: flotarSol 3s ease-in-out infinite;
+     filter: drop-shadow(0 0 6px rgba(249, 215, 28, 0.7));
+     opacity: 0.8;
+ }
+   .marco-radiante2 .sol {
+     position: absolute;
+     width: 30px;
+     height: 30px;
+     background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath fill='%23f9d71c' d='M20 2l-4 4 8 10-4 4L10 10 6 14l12 10-10 10 4 4 10-10 4 4-10 10 4 4 10-10 10 10 4-4-10-10 4-4 10 10 4-4-10-10 12-10-4-4-10 10-4-4 8-10-4-4-8 10z'/%3E%3C/svg%3E");
+     background-size: contain;
+     background-repeat: no-repeat;
+     animation: flotarSol 3s ease-in-out infinite;
+     filter: drop-shadow(0 0 6px rgba(249, 215, 28, 0.7));
+     opacity: 0.8;
+ }
+
+ /* Animación: flotación suave con leve pulsación */
+ @keyframes flotarSol {
+
+     0%,
+     100% {
+         transform: translateY(0) scale(1);
+         opacity: 0.9;
+     }
+
+     50% {
+         transform: translateY(-5px) scale(1.1);
+         opacity: 1;
+     }
+ }
+
+ /* Posiciones y delays */
+ .marco-radiante .sol:nth-child(1) {
+     top: 15px;
+     left: 15px;
+     animation-delay: 0s;
+ }
+
+ .marco-radiante .sol:nth-child(2) {
+     top: 15px;
+     right: 15px;
+     animation-delay: 0.4s;
+ }
+
+ .marco-radiante .sol:nth-child(3) {
+     bottom: 15px;
+     left: 15px;
+     animation-delay: 0.8s;
+ }
+
+ .marco-radiante .sol:nth-child(4) {
+     bottom: 15px;
+     right: 15px;
+     animation-delay: 1.2s;
+ }
+
+  /* Posiciones y delays */
+ .marco-radiante1 .sol:nth-child(1) {
+     top: 15px;
+     left: 15px;
+     animation-delay: 0s;
+ }
+
+ .marco-radiante1 .sol:nth-child(2) {
+     top: 15px;
+     right: 15px;
+     animation-delay: 0.4s;
+ }
+
+ .marco-radiante1 .sol:nth-child(3) {
+     bottom: 15px;
+     left: 15px;
+     animation-delay: 0.8s;
+ }
+
+ .marco-radiante1 .sol:nth-child(4) {
+     bottom: 15px;
+     right: 15px;
+     animation-delay: 1.2s;
+ }
+
+  /* Posiciones y delays */
+ .marco-radiante2 .sol:nth-child(1) {
+     top: 15px;
+     left: 15px;
+     animation-delay: 0s;
+ }
+
+ .marco-radiante2 .sol:nth-child(2) {
+     top: 15px;
+     right: 15px;
+     animation-delay: 0.4s;
+ }
+
+ .marco-radiante2 .sol:nth-child(3) {
+     bottom: 15px;
+     left: 15px;
+     animation-delay: 0.8s;
+ }
+
+ .marco-radiante2 .sol:nth-child(4) {
+     bottom: 15px;
+     right: 15px;
+     animation-delay: 1.2s;
+ }
+
+
+
+
+
+
+
+ /* Marco Héroe 2: Guardián del Bosque */
+ .marco-bosque {
+     border: 3px solid #3c8b45;
+     background: url(OMG/card4.png);
+     background-size: cover;
+     background-position: center;
+     background-repeat: no-repeat;
+     box-shadow: 0 0 15px rgba(76, 170, 80, 0.8);
+     position: relative;
+ }
+
+ .marco-bosque::before {
+     content: '';
+     position: absolute;
+     top: 0;
+     left: 0;
+     right: 0;
+     bottom: 0;
+     background-image:
+         url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath fill='%233c8b45' d='M50 10 Q60 30 70 30 Q80 30 90 50 Q70 50 50 70 Q30 50 10 50 Q20 30 30 30 Q40 30 50 10'/%3E%3C/svg%3E");
+     background-size: 80px 80px;
+     background-position: center;
+     opacity: 0.2;
+     z-index: 0;
+ }
+
+ .marco-bosque .hoja-grande {
+     position: absolute;
+     width: 35px;
+     height: 35px;
+     background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 50 50'%3E%3Cpath fill='%233c8b45' d='M25 5 Q35 15 45 10 Q40 20 45 30 Q35 25 25 45 Q15 25 5 30 Q10 20 5 10 Q15 15 25 5'/%3E%3C/svg%3E");
+     background-size: contain;
+     background-repeat: no-repeat;
+     animation: flotarHoja 4s ease-in-out infinite;
+     filter: drop-shadow(0 3px 6px rgba(109, 201, 114, 0.5));
+ }
+
+ /* Animación de flotación con leve rotación */
+ @keyframes flotarHoja {
+
+     0%,
+     100% {
+         transform: translateY(0) rotate(0deg) scale(1);
+     }
+
+     50% {
+         transform: translateY(-6px) rotate(-3deg) scale(1.05);
+     }
+ }
+
+ /* Posiciones y delays */
+ .marco-bosque .hoja-grande:nth-child(1) {
+     top: 10px;
+     left: 10px;
+     animation-delay: 0s;
+ }
+
+ .marco-bosque .hoja-grande:nth-child(2) {
+     top: 10px;
+     right: 10px;
+     animation-delay: 0.4s;
+     transform: scaleX(-1);
+ }
+
+ .marco-bosque .hoja-grande:nth-child(3) {
+     bottom: 10px;
+     left: 10px;
+     animation-delay: 0.8s;
+     transform: scaleY(-1);
+ }
+
+ .marco-bosque .hoja-grande:nth-child(4) {
+     bottom: 10px;
+     right: 10px;
+     animation-delay: 1.2s;
+     transform: scale(-1);
+ }
+
+
+
+
+
+
+
+
+
+ /* Marco Héroe 3: Sabio Arcano (versión Azul Brillante) */
+ .marco-arcano {
+     border: 3px solid #00cfff;
+     background: url(OMG/card1.png);
+     background-size: cover;
+     background-position: center;
+     background-repeat: no-repeat;
+     position: relative;
+ }
+
+
+
+ .marco-arcano .estrella {
+     position: absolute;
+     width: 40px;
+     height: 40px;
+     background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath fill='%2300cfff' d='M15 3 L18 11 L26 11 L20 16 L23 24 L15 19 L7 24 L10 16 L4 11 L12 11 Z'/%3E%3C/svg%3E");
+     background-size: contain;
+     background-repeat: no-repeat;
+     filter: drop-shadow(0 0 6px #00cfff);
+     animation: flotarYBrillar 3s ease-in-out infinite;
+ }
+
+ /* Animación combinada de flotación + parpadeo */
+ @keyframes flotarYBrillar {
+
+     0%,
+     100% {
+         transform: translateY(0) scale(1);
+         opacity: 0.8;
+     }
+
+     50% {
+         transform: translateY(-6px) scale(1.1);
+         opacity: 1;
+     }
+ }
+
+ .marco-arcano .estrella:nth-child(1) {
+     top: 15px;
+     left: 15px;
+     animation-delay: 0s;
+ }
+
+ .marco-arcano .estrella:nth-child(2) {
+     top: 15px;
+     right: 15px;
+     animation-delay: 0.5s;
+ }
+
+ .marco-arcano .estrella:nth-child(3) {
+     bottom: 15px;
+     left: 15px;
+     animation-delay: 1s;
+ }
+
+ .marco-arcano .estrella:nth-child(4) {
+     bottom: 15px;
+     right: 15px;
+     animation-delay: 1.5s;
+ }
+
+
+ @media (max-width: 768px) {
+     .marcos-container {
+         grid-template-columns: 1fr;
+         gap: 30px;
+     }
+
+     .carta {
+         padding: 20px;
+         min-height: 350px;
+     }
+
+     .carta-titulo {
+         font-size: 1.4rem;
+     }
+ }
+
+
+
+
+ /***************************** EFECTO GOTAS **********************************/
+
+.particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;  /* Usa viewport width y height */
+    height: 100vh;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+.particle {
+    position: absolute;
+    width: 30px;  /* controla tamaño */
+    height: 30px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 50 50'%3E%3Cpath fill='%2394d82a' d='M25 5 Q35 15 45 10 Q40 20 45 30 Q35 25 25 45 Q15 25 5 30 Q10 20 5 10 Q15 15 25 5'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    animation: floatLeaf 7s infinite linear;
+    opacity: 0.4;  /* menos opaco para efecto más sutil */
+}
+
+/* Keyframes mantienen tu animación */
+@keyframes floatLeaf {
+    0% {
+        transform: translateY(0) translateX(0) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.6;
+    }
+    50% {
+        transform: translateY(-60vh) translateX(70px) rotate(180deg);
+        opacity: 0.4;
+    }
+    100% {
+        transform: translateY(-120vh) translateX(120px) rotate(360deg);
+        opacity: 0;
+    }
+}
+

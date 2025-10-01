@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marcos para Cartas - Eternal Realms</title>
+    <!-- Importar fuente medieval de Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=MedievalSharp&display=swap"rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Cinzel', serif;
+            color: #e7d9c4;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: 
+                linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+                url('https://images.unsplash.com/photo-1519669556878-63bdad8a1a49?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80') center/cover no-repeat,
+                #1a1208;
+            padding: 20px;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        .Portada {
+            padding: 40px;
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 15px;
+            box-shadow: 0 0 25px rgba(139, 69, 19, 0.5);
+            border: 2px solid #7a5c2d;
+            backdrop-filter: blur(4px);
+            width: 90%;
+            max-width: 1000px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .Titulo {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px;
+        }
+
+        .Titulo p {
+            font-family: 'Cinzel', serif;
+            font-weight: 900;
+            letter-spacing: 8px;
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            margin: 0;
+            text-shadow:
+                2px 2px 0px #8B4513,
+                4px 4px 0px #654321,
+                6px 6px 12px rgba(0, 0, 0, 0.8),
+                0 0 20px rgba(139, 69, 19, 0.3);
+        }
+
+        /* Sección de marcos */
+        .marcos-seccion {
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 15px;
+            box-shadow: 0 0 25px rgba(139, 69, 19, 0.5);
+            border: 2px solid #7a5c2d;
+            backdrop-filter: blur(4px);
+            padding: 30px;
+            width: 90%;
+            max-width: 1200px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .marcos-seccion h2 {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            border-bottom: 2px solid #7a5c2d;
+            padding-bottom: 15px;
+            letter-spacing: 3px;
+        }
+
+        .marcos-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 40px;
+            justify-content: center;
+        }
+
+        /* Estilos base para todas las cartas */
+        .carta {
+            background: linear-gradient(145deg, rgba(73, 54, 19, 0.7), rgba(34, 25, 10, 0.7));
+            border-radius: 15px;
+            padding: 25px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+            min-height: 380px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .carta-titulo {
+            font-size: 1.6rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .carta-descripcion {
+            font-family: 'MedievalSharp', cursive;
+            font-size: 1.1rem;
+            line-height: 1.5;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            margin-bottom: 20px;
+            text-align: center;
+            flex-grow: 1;
+        }
+
+        .carta:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(139, 69, 19, 0.4);
+        }
+
+        /* MARCOS PARA HÉROES */
+
+        /* Marco Héroe 1: Caballero Radiante */
+        .marco-radiante {
+            border: 3px solid #f9d71c;
+            background: 
+                linear-gradient(rgba(30, 25, 5, 0.8), rgba(30, 25, 5, 0.8)),
+                url('https://www.transparenttextures.com/patterns/light-wool.png');
+            box-shadow: 0 0 15px rgba(249, 215, 28, 0.5), inset 0 0 20px rgba(249, 215, 28, 0.3);
+            position: relative;
+        }
+
+        .marco-radiante::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            right: 10px;
+            bottom: 10px;
+            border: 1px solid rgba(249, 215, 28, 0.5);
+            border-radius: 10px;
+            pointer-events: none;
+        }
+
+        .marco-radiante::after {
+            content: '🛡️';
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #5e461f;
+            padding: 5px 15px;
+            border-radius: 15px;
+            font-size: 1.5rem;
+            border: 2px solid #f9d71c;
+        }
+
+        .marco-radiante .sol {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background: radial-gradient(circle, #f9d71c 40%, transparent 41%),
+                        repeating-radial-gradient(circle at center, transparent 0, #f9d71c 2px, transparent 3px, transparent 10px);
+            border-radius: 50%;
+        }
+
+        .marco-radiante .sol:nth-child(1) { top: 15px; left: 15px; }
+        .marco-radiante .sol:nth-child(2) { top: 15px; right: 15px; }
+        .marco-radiante .sol:nth-child(3) { bottom: 15px; left: 15px; }
+        .marco-radiante .sol:nth-child(4) { bottom: 15px; right: 15px; }
+
+        /* Marco Héroe 2: Guardián del Bosque */
+        .marco-bosque {
+            border: 3px solid #3c8b45;
+            background: 
+                linear-gradient(rgba(15, 30, 10, 0.8), rgba(15, 30, 10, 0.8)),
+                url('https://www.transparenttextures.com/patterns/wood-pattern.png');
+            box-shadow: 0 0 15px rgba(76, 170, 80, 0.5);
+            position: relative;
+        }
+
+        .marco-bosque::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath fill='%233c8b45' d='M50 10 Q60 30 70 30 Q80 30 90 50 Q70 50 50 70 Q30 50 10 50 Q20 30 30 30 Q40 30 50 10'/%3E%3C/svg%3E");
+            background-size: 80px 80px;
+            background-position: center;
+            opacity: 0.2;
+            z-index: 0;
+        }
+
+        .marco-bosque .hoja-grande {
+            position: absolute;
+            width: 35px;
+            height: 35px;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 50 50'%3E%3Cpath fill='%233c8b45' d='M25 5 Q35 15 45 10 Q40 20 45 30 Q35 25 25 45 Q15 25 5 30 Q10 20 5 10 Q15 15 25 5'/%3E%3C/svg%3E");
+            background-size: contain;
+        }
+
+        .marco-bosque .hoja-grande:nth-child(1) { top: 10px; left: 10px; }
+        .marco-bosque .hoja-grande:nth-child(2) { top: 10px; right: 10px; transform: scaleX(-1); }
+        .marco-bosque .hoja-grande:nth-child(3) { bottom: 10px; left: 10px; transform: scaleY(-1); }
+        .marco-bosque .hoja-grande:nth-child(4) { bottom: 10px; right: 10px; transform: scale(-1); }
+
+/* Marco Héroe 3: Sabio Arcano (versión Azul Brillante) */
+.marco-arcano {
+    border: 2px solid transparent;
+    background: 
+        linear-gradient(#0a0d1ecc, rgba(10, 25, 60, 0.85)),
+        url('https://www.transparenttextures.com/patterns/starfield.png');
+    background-clip: padding-box;
+    position: relative;
+}
+
+.marco-arcano::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(
+        45deg, 
+        #007bff,  /* azul brillante */
+        #00cfff,  /* azul eléctrico */
+        #1ec8ff,  /* azul celeste intenso */
+        #00cfff, 
+        #007bff
+    );
+    border-radius: 17px;
+    z-index: -1;
+    background-size: 300% 300%;
+    animation: borderArcano 4s infinite linear;
+    filter: drop-shadow(0 0 8px #00cfff);
+}
+
+@keyframes borderArcano {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.marco-arcano .estrella {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath fill='%2300cfff' d='M15 3 L18 11 L26 11 L20 16 L23 24 L15 19 L7 24 L10 16 L4 11 L12 11 Z'/%3E%3C/svg%3E");
+    background-size: contain;
+    animation: twinkle 3s infinite alternate;
+    filter: drop-shadow(0 0 6px #00cfff);
+}
+
+@keyframes twinkle {
+    0% { opacity: 0.3; transform: scale(0.9); }
+    100% { opacity: 1; transform: scale(1.1); }
+}
+
+.marco-arcano .estrella:nth-child(1) { top: 15px; left: 15px; animation-delay: 0s; }
+.marco-arcano .estrella:nth-child(2) { top: 15px; right: 15px; animation-delay: 0.5s; }
+.marco-arcano .estrella:nth-child(3) { bottom: 15px; left: 15px; animation-delay: 1s; }
+.marco-arcano .estrella:nth-child(4) { bottom: 15px; right: 15px; animation-delay: 1.5s; }
+
+
+        /* MARCOS PARA VILLANOS */
+
+        /* Marco Villano 1: Pesadilla Abisal */
+        .marco-abisal {
+            border: 3px solid #2c1b47;
+            background: 
+                linear-gradient(rgba(10, 5, 20, 0.9), rgba(10, 5, 20, 0.9)),
+                url('https://www.transparenttextures.com/patterns/dark-matter.png');
+            box-shadow: 0 0 20px rgba(67, 28, 117, 0.7), inset 0 0 20px rgba(67, 28, 117, 0.3);
+            position: relative;
+        }
+
+        .marco-abisal::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath fill='%23431c75' d='M40 10 Q50 0 60 10 Q70 20 90 20 Q80 30 90 40 Q70 40 60 50 Q50 60 40 50 Q30 40 10 40 Q20 30 10 20 Q30 20 40 10'/%3E%3C/svg%3E");
+            background-size: 100px 100px;
+            background-position: center;
+            opacity: 0.2;
+            z-index: 0;
+        }
+
+        .marco-abisal .tentaculo {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath fill='%23431c75' d='M15 5 Q25 0 25 15 Q25 30 15 25 Q5 30 5 15 Q5 0 15 5'/%3E%3C/svg%3E");
+            background-size: contain;
+        }
+
+        .marco-abisal .tentaculo:nth-child(1) { top: 10px; left: 10px; }
+        .marco-abisal .tentaculo:nth-child(2) { top: 10px; right: 10px; transform: scaleX(-1); }
+        .marco-abisal .tentaculo:nth-child(3) { bottom: 10px; left: 10px; transform: scaleY(-1); }
+        .marco-abisal .tentaculo:nth-child(4) { bottom: 10px; right: 10px; transform: scale(-1); }
+
+        /* Marco Villano 2: Señor del Caos */
+        .marco-caos {
+            border: 2px solid #8b0000;
+            background: 
+                linear-gradient(rgba(30, 0, 0, 0.9), rgba(30, 0, 0, 0.9)),
+                url('https://www.transparenttextures.com/patterns/carbon-fibre.png');
+            position: relative;
+            overflow: hidden;
+        }
+
+        .marco-caos::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                linear-gradient(45deg, transparent 40%, rgba(139, 0, 0, 0.2) 50%, transparent 60%),
+                linear-gradient(-45deg, transparent 40%, rgba(139, 0, 0, 0.2) 50%, transparent 60%);
+            background-size: 10px 10px;
+            opacity: 0.5;
+            z-index: 0;
+            animation: caosBackground 2s infinite linear;
+        }
+
+        @keyframes caosBackground {
+            0% { background-position: 0 0; }
+            100% { background-position: 10px 10px; }
+        }
+
+        .marco-caos .grieta {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cpath fill='none' stroke='%238b0000' stroke-width='2' d='M10 10 Q15 5 20 15 Q25 5 30 10 Q35 15 25 20 Q35 25 30 30 Q25 35 20 25 Q15 35 10 30 Q5 25 15 20 Q5 15 10 10'/%3E%3C/svg%3E");
+            background-size: contain;
+        }
+
+        .marco-caos .grieta:nth-child(1) { top: 5px; left: 5px; }
+        .marco-caos .grieta:nth-child(2) { top: 5px; right: 5px; transform: scaleX(-1); }
+        .marco-caos .grieta:nth-child(3) { bottom: 5px; left: 5px; transform: scaleY(-1); }
+        .marco-caos .grieta:nth-child(4) { bottom: 5px; right: 5px; transform: scale(-1); }
+
+        /* Marco Villano 3: Nigromante Oscuro */
+        .marco-nigromante {
+            border: 3px solid #36454f;
+            background: 
+                linear-gradient(rgba(20, 20, 20, 0.9), rgba(20, 20, 20, 0.9)),
+                url('https://www.transparenttextures.com/patterns/black-twill.png');
+            box-shadow: 0 0 20px rgba(54, 69, 79, 0.7);
+            position: relative;
+        }
+
+        .marco-nigromante::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            right: 10px;
+            bottom: 10px;
+            border: 1px solid #5d6d7e;
+            border-radius: 10px;
+            pointer-events: none;
+        }
+
+        .marco-nigromante .calavera {
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath fill='%235d6d7e' d='M20 10 Q25 5 25 15 Q25 20 20 22 Q25 25 20 28 Q15 25 10 28 Q5 25 10 22 Q5 20 5 15 Q5 5 10 10 Q15 5 20 10'/%3E%3Ccircle cx='12' cy='13' r='2' fill='%2336454f'/%3E%3Ccircle cx='18' cy='13' r='2' fill='%2336454f'/%3E%3Cpath d='M12 18 Q15 20 18 18' stroke='%2336454f' stroke-width='1' fill='none'/%3E%3C/svg%3E");
+            background-size: contain;
+        }
+
+        .marco-nigromante .calavera:nth-child(1) { top: 15px; left: 15px; }
+        .marco-nigromante .calavera:nth-child(2) { top: 15px; right: 15px; }
+        .marco-nigromante .calavera:nth-child(3) { bottom: 15px; left: 15px; }
+        .marco-nigromante .calavera:nth-child(4) { bottom: 15px; right: 15px; }
+
+        /* Elementos decorativos comunes */
+        .decoracion, .sol, .hoja-grande, .estrella, .tentaculo, .grieta, .calavera {
+            position: absolute;
+            z-index: 1;
+        }
+
+        .contenido-carta {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        /* Efectos de partículas para ambiente mágico */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .particle {
+            position: absolute;
+            background: rgba(139, 69, 19, 0.3);
+            border-radius: 50%;
+            opacity: 0;
+            animation: float 15s infinite linear;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0) translateX(0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.5;
+            }
+            90% {
+                opacity: 0.3;
+            }
+            100% {
+                transform: translateY(-100vh) translateX(100px);
+                opacity: 0;
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .marcos-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .carta {
+                padding: 20px;
+                min-height: 350px;
+            }
+            
+            .carta-titulo {
+                font-size: 1.4rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Efecto de partículas -->
+    <div class="particles" id="particles"></div>
+    
+    <div class="Portada">
+        <div class="Titulo">
+            <p>Eternal Realms</p>
+        </div>
+    </div>
+    
+    <!-- SECCIÓN HÉROES -->
+    <div class="marcos-seccion">
+        <h2>Marcos para Héroes</h2>
+        <div class="marcos-container">
+            <!-- Marco Héroe 1: Caballero Radiante -->
+            <div class="carta marco-radiante">
+                <div class="sol"></div>
+                <div class="sol"></div>
+                <div class="sol"></div>
+                <div class="sol"></div>
+                <div class="contenido-carta">
+                    <h3 class="carta-titulo">Caballero Radiante</h3>
+                    <p class="carta-descripcion">Bordes dorados brillantes con símbolos solares. Perfecto para paladines y guerreros de la luz.</p>
+                </div>
+            </div>
+            
+            <!-- Marco Héroe 2: Guardián del Bosque -->
+            <div class="carta marco-bosque">
+                <div class="hoja-grande"></div>
+                <div class="hoja-grande"></div>
+                <div class="hoja-grande"></div>
+                <div class="hoja-grande"></div>
+                <div class="contenido-carta">
+                    <h3 class="carta-titulo">Guardián del Bosque</h3>
+                    <p class="carta-descripcion">Motivos naturales con hojas y tonos verdes. Ideal para druidas y protectores de la naturaleza.</p>
+                </div>
+            </div>
+            
+            <!-- Marco Héroe 3: Sabio Arcano -->
+            <div class="carta marco-arcano">
+                <div class="estrella"></div>
+                <div class="estrella"></div>
+                <div class="estrella"></div>
+                <div class="estrella"></div>
+                <div class="contenido-carta">
+                    <h3 class="carta-titulo">Sabio Arcano</h3>
+                    <p class="carta-descripcion">Bordes púrpuras con estrellas centelleantes. Para magos y estudiosos de artes arcanas.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- SECCIÓN VILLANOS -->
+    <div class="marcos-seccion">
+        <h2>Marcos para Villanos</h2>
+        <div class="marcos-container">
+            <!-- Marco Villano 1: Pesadilla Abisal -->
+            <div class="carta marco-abisal">
+                <div class="tentaculo"></div>
+                <div class="tentaculo"></div>
+                <div class="tentaculo"></div>
+                <div class="tentaculo"></div>
+                <div class="contenido-carta">
+                    <h3 class="carta-titulo">Pesadilla Abisal</h3>
+                    <p class="carta-descripcion">Diseño oscuro con tentáculos y tonos púrpuras. Para criaturas de las profundidades y seres cósmicos.</p>
+                </div>
+            </div>
+            
+            <!-- Marco Villano 2: Señor del Caos -->
+            <div class="carta marco-caos">
+                <div class="grieta"></div>
+                <div class="grieta"></div>
+                <div class="grieta"></div>
+                <div class="grieta"></div>
+                <div class="contenido-carta">
+                    <h3 class="carta-titulo">Señor del Caos</h3>
+                    <p class="carta-descripcion">Patrones fracturados con animación de fondo caótica. Ideal para demonios y seres de pura destrucción.</p>
+                </div>
+            </div>
+            
+            <!-- Marco Villano 3: Nigromante Oscuro -->
+            <div class="carta marco-nigromante">
+                <div class="calavera"></div>
+                <div class="calavera"></div>
+                <div class="calavera"></div>
+                <div class="calavera"></div>
+                <div class="contenido-carta">
+                    <h3 class="carta-titulo">Nigromante Oscuro</h3>
+                    <p class="carta-descripcion">Diseño sombrío con calaveras y tonos grisáceos. Para nigromantes y señores de los no muertos.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Crear efecto de partículas
+        document.addEventListener('DOMContentLoaded', function() {
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 30;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                
+                // Tamaño aleatorio
+                const size = Math.random() * 10 + 5;
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                
+                // Posición inicial aleatoria
+                particle.style.left = `${Math.random() * 100}vw`;
+                particle.style.top = `${Math.random() * 100}vh`;
+                
+                // Retraso aleatorio en la animación
+                particle.style.animationDelay = `${Math.random() * 15}s`;
+                
+                particlesContainer.appendChild(particle);
+            }
+        });
+    </script>
+</body>
+
+</html>

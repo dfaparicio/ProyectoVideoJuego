@@ -1,0 +1,230 @@
+        /* MARCOS PARA VILLANOS */
+
+        /* Marco Villano 1: Pesadilla Abisal */
+        .marco-abisal {
+            border: 3px solid #2c1b47;
+            background:
+                linear-gradient(rgba(10, 5, 20, 0.9), rgba(10, 5, 20, 0.9)),
+                url('https://www.transparenttextures.com/patterns/dark-matter.png');
+            box-shadow: 0 0 20px rgba(67, 28, 117, 0.7), inset 0 0 20px rgba(67, 28, 117, 0.3);
+            position: relative;
+        }
+
+        .marco-abisal::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image:
+                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath fill='%23431c75' d='M40 10 Q50 0 60 10 Q70 20 90 20 Q80 30 90 40 Q70 40 60 50 Q50 60 40 50 Q30 40 10 40 Q20 30 10 20 Q30 20 40 10'/%3E%3C/svg%3E");
+            background-size: 100px 100px;
+            background-position: center;
+            opacity: 0.2;
+            z-index: 0;
+        }
+
+        .marco-abisal .tentaculo {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath fill='%23431c75' d='M15 5 Q25 0 25 15 Q25 30 15 25 Q5 30 5 15 Q5 0 15 5'/%3E%3C/svg%3E");
+            background-size: contain;
+        }
+
+        .marco-abisal .tentaculo:nth-child(1) {
+            top: 10px;
+            left: 10px;
+        }
+
+        .marco-abisal .tentaculo:nth-child(2) {
+            top: 10px;
+            right: 10px;
+            transform: scaleX(-1);
+        }
+
+        .marco-abisal .tentaculo:nth-child(3) {
+            bottom: 10px;
+            left: 10px;
+            transform: scaleY(-1);
+        }
+
+        .marco-abisal .tentaculo:nth-child(4) {
+            bottom: 10px;
+            right: 10px;
+            transform: scale(-1);
+        }
+
+        /* Marco Villano 2: Señor del Caos */
+        .marco-caos {
+            border: 2px solid #8b0000;
+            background:
+                linear-gradient(rgba(30, 0, 0, 0.9), rgba(30, 0, 0, 0.9)),
+                url('https://www.transparenttextures.com/patterns/carbon-fibre.png');
+            position: relative;
+            overflow: hidden;
+        }
+
+        .marco-caos::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                linear-gradient(45deg, transparent 40%, rgba(139, 0, 0, 0.2) 50%, transparent 60%),
+                linear-gradient(-45deg, transparent 40%, rgba(139, 0, 0, 0.2) 50%, transparent 60%);
+            background-size: 10px 10px;
+            opacity: 0.5;
+            z-index: 0;
+            animation: caosBackground 2s infinite linear;
+        }
+
+        @keyframes caosBackground {
+            0% {
+                background-position: 0 0;
+            }
+
+            100% {
+                background-position: 10px 10px;
+            }
+        }
+
+        .marco-caos .grieta {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cpath fill='none' stroke='%238b0000' stroke-width='2' d='M10 10 Q15 5 20 15 Q25 5 30 10 Q35 15 25 20 Q35 25 30 30 Q25 35 20 25 Q15 35 10 30 Q5 25 15 20 Q5 15 10 10'/%3E%3C/svg%3E");
+            background-size: contain;
+        }
+
+        .marco-caos .grieta:nth-child(1) {
+            top: 5px;
+            left: 5px;
+        }
+
+        .marco-caos .grieta:nth-child(2) {
+            top: 5px;
+            right: 5px;
+            transform: scaleX(-1);
+        }
+
+        .marco-caos .grieta:nth-child(3) {
+            bottom: 5px;
+            left: 5px;
+            transform: scaleY(-1);
+        }
+
+        .marco-caos .grieta:nth-child(4) {
+            bottom: 5px;
+            right: 5px;
+            transform: scale(-1);
+        }
+
+        /* Marco Villano 3: Nigromante Oscuro */
+        .marco-nigromante {
+            border: 3px solid #36454f;
+            background:
+                linear-gradient(rgba(20, 20, 20, 0.9), rgba(20, 20, 20, 0.9)),
+                url('https://www.transparenttextures.com/patterns/black-twill.png');
+            box-shadow: 0 0 20px rgba(54, 69, 79, 0.7);
+            position: relative;
+        }
+
+        .marco-nigromante::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            right: 10px;
+            bottom: 10px;
+            border: 1px solid #5d6d7e;
+            border-radius: 10px;
+            pointer-events: none;
+        }
+
+        .marco-nigromante .calavera {
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath fill='%235d6d7e' d='M20 10 Q25 5 25 15 Q25 20 20 22 Q25 25 20 28 Q15 25 10 28 Q5 25 10 22 Q5 20 5 15 Q5 5 10 10 Q15 5 20 10'/%3E%3Ccircle cx='12' cy='13' r='2' fill='%2336454f'/%3E%3Ccircle cx='18' cy='13' r='2' fill='%2336454f'/%3E%3Cpath d='M12 18 Q15 20 18 18' stroke='%2336454f' stroke-width='1' fill='none'/%3E%3C/svg%3E");
+            background-size: contain;
+        }
+
+        .marco-nigromante .calavera:nth-child(1) {
+            top: 15px;
+            left: 15px;
+        }
+
+        .marco-nigromante .calavera:nth-child(2) {
+            top: 15px;
+            right: 15px;
+        }
+
+        .marco-nigromante .calavera:nth-child(3) {
+            bottom: 15px;
+            left: 15px;
+        }
+
+        .marco-nigromante .calavera:nth-child(4) {
+            bottom: 15px;
+            right: 15px;
+        }
+
+        /* Marco Héroe 2: Guardián del Bosque */
+        .marco-bosque {
+            border: 3px solid #3c8b45;
+            background:
+                linear-gradient(rgba(15, 30, 10, 0.8), rgba(15, 30, 10, 0.8)),
+                url('https://www.transparenttextures.com/patterns/wood-pattern.png');
+            box-shadow: 0 0 15px rgba(76, 170, 80, 0.5);
+            position: relative;
+        }
+
+        .marco-bosque::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image:
+                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath fill='%233c8b45' d='M50 10 Q60 30 70 30 Q80 30 90 50 Q70 50 50 70 Q30 50 10 50 Q20 30 30 30 Q40 30 50 10'/%3E%3C/svg%3E");
+            background-size: 80px 80px;
+            background-position: center;
+            opacity: 0.2;
+            z-index: 0;
+        }
+
+        .marco-bosque .hoja-grande {
+            position: absolute;
+            width: 35px;
+            height: 35px;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 50 50'%3E%3Cpath fill='%233c8b45' d='M25 5 Q35 15 45 10 Q40 20 45 30 Q35 25 25 45 Q15 25 5 30 Q10 20 5 10 Q15 15 25 5'/%3E%3C/svg%3E");
+            background-size: contain;
+        }
+
+        .marco-bosque .hoja-grande:nth-child(1) {
+            top: 10px;
+            left: 10px;
+        }
+
+        .marco-bosque .hoja-grande:nth-child(2) {
+            top: 10px;
+            right: 10px;
+            transform: scaleX(-1);
+        }
+
+        .marco-bosque .hoja-grande:nth-child(3) {
+            bottom: 10px;
+            left: 10px;
+            transform: scaleY(-1);
+        }
+
+        .marco-bosque .hoja-grande:nth-child(4) {
+            bottom: 10px;
+            right: 10px;
+            transform: scale(-1);
+        }

@@ -1,0 +1,341 @@
+/************************* CONFIGURACIÓN GENERAL *******************************/
+* {
+  font-family: 'Cinzel', serif;
+  color: #e7d9c4;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 5em;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  overflow: hidden;
+  background: black;
+}
+
+
+
+
+
+/************************* PORTADA *******************************/
+.Portada {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.Portada::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center,
+      rgba(0, 0, 0, 0.4) 0%,
+      rgba(0, 0, 0, 0.7) 100%);
+  z-index: -1;
+  pointer-events: none;
+}
+
+#bg-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+
+/* 🎥 Animación de enfoque del video con desenfoque y brillo */
+.Portada video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  filter: blur(25px);
+  animation: enfocar 6s ease-out forwards;
+}
+
+@keyframes enfocar {
+  0% {
+    filter: blur(25px) brightness(0.6);
+  }
+  100% {
+    filter: blur(0px) brightness(1);
+  }
+}
+
+/* 🌫️ Efecto humo */
+.Portada::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle,
+      rgba(0, 0, 0, 0.7) 20%,
+      rgba(0, 0, 0, 0.9) 100%);
+  filter: blur(60px);
+  opacity: 1;
+  animation: desvanecerHumo 8s ease-out forwards;
+  z-index: 2;
+  pointer-events: none;
+}
+
+@keyframes desvanecerHumo {
+  0% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+}
+
+
+
+
+
+/************************* INTRO *******************************/
+#intro-container {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  background: black;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#intro-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+}
+
+#start-text {
+  position: absolute;
+  bottom: 30px;
+  font-size: 20px;
+  color: rgba(245, 216, 140, 0.2);
+  cursor: pointer;
+  user-select: none;
+  transition: color 0.3s ease;
+}
+
+#skip-text {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  cursor: pointer;
+  display: none;
+  font-size: 20px;
+  color: rgba(245, 216, 140, 0.6);
+  user-select: none;
+  transition: color 0.3s ease;
+}
+
+#start-text:hover,
+#skip-text:hover {
+  color: rgba(245, 216, 140, 0.8);
+}
+
+
+
+
+
+/************************* INPUT DEL NOMBRE DE HÉROE *******************************/
+#username {
+  font-size: 1rem;
+  color: #e7d9c4;
+  text-align: center;
+  width: 350px;
+  padding: 10px 38px 10px 12px;
+  margin: 20px auto;
+  display: block;
+  background: #111;
+  border: 1px solid #bfa980;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(191, 169, 128, 0.3);
+  transition: all 0.3s ease-in-out;
+}
+
+#username:focus {
+  outline: none;
+  border-color: #e7d9c4;
+  box-shadow: 0 0 12px #fff, 0 0 20px #e7d9c4;
+  background: rgba(20, 20, 20, 0.8);
+}
+
+#username::placeholder {
+  color: rgba(231, 217, 196, 0.5);
+  letter-spacing: 1px;
+}
+
+
+
+
+
+/************************* BOTÓN DE ACEPTAR *******************************/
+#accept-btn {
+  display: block;
+  padding: 10px 25px;
+  font-size: 14px;
+  color: #fff;
+  background: linear-gradient(145deg, #bfa980, #695632);
+  border: 2px solid #bfa980;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+}
+
+#accept-btn:hover {
+  background: linear-gradient(145deg, #ac8d53, #a67b2c);
+  box-shadow: 0 0 8px #fff, 0 0 10px #e7d9c4;
+}
+
+
+
+
+
+/************************* BOTÓN DE DADO ALEATORIO *******************************/
+#dice-btn {
+  position: absolute;
+  top: 50.3%;
+  right: 41.4%;
+  transform: translateY(-50%);
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #e7d9c4;
+  padding: 0;
+}
+
+#dice-btn:hover {
+  transform: translateY(-50%) scale(1.2);
+}
+
+
+
+
+
+/************************* MENSAJE DE ADVERTENCIA *******************************/
+#warning-text {
+  color: #ff4c4c;
+  font-size: 0.85rem;
+  font-family: 'Cinzel', serif;
+  display: none;
+  margin-left: 4px;
+  text-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+}
+
+
+
+
+
+/************************* TEXTO DE INTRO *******************************/
+.intro-lore {
+  font-size: 1.1rem;
+  color: #d8cbb2;
+  text-align: center;
+  max-width: 700px;
+  margin-bottom: 20px;
+  padding: 0 20px;
+  font-style: italic;
+  letter-spacing: 1px;
+  line-height: 1.4;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  animation: fadeInLore 2s ease-in-out;
+}
+
+@keyframes fadeInLore {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+
+
+/************************* INFORMACION PAGINA *******************************/
+#Logo {
+  position: fixed;
+  left: 4%;
+  top: 5%;
+  width: 440px;
+  filter: drop-shadow(0 0 2px #fff);
+  z-index: 100;
+}
+
+
+
+#Opciones {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 320px;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(8px);
+  position: absolute;
+  top: 30%;
+  left: 10%;
+  padding: 20px;
+  border: 1px solid #e7d9c4;
+  border-radius: 12px;
+  box-shadow: 0 0 16px rgba(231, 217, 196, 0.8), 0 0 32px rgba(191, 169, 128, 0.6);
+  animation: resplandorSuave 10s ease-in-out infinite alternate;
+  z-index: 90;
+}
+
+/* 🌟 Resplandor suave y lento del cuadro de opciones */
+@keyframes resplandorSuave {
+  0% { box-shadow: 0 0 5px rgba(231, 217, 196, 0.2); }
+  50% { box-shadow: 0 0 15px rgba(231, 217, 196, 0.9), 0 0 40px rgba(191, 169, 128, 0.7); }
+  100% { box-shadow: 0 0 8px rgba(231, 217, 196, 0.3); }
+}
+
+#Opciones .EditOpciones {
+  border: 1px solid #e7d9c4;
+  padding: 14px 18px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 6px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+#Opciones .EditOpciones:hover {
+  color: #fff;
+  background: rgba(231, 217, 196, 0.25);
+  box-shadow: 0 0 14px #fff, 0 0 20px #e7d9c4;
+  transform: scale(1.08);
+}

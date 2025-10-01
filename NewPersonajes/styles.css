@@ -1,0 +1,116 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: url(img/Fondo.png) center/cover no-repeat;
+}
+
+.hero {
+  position: absolute;
+  cursor: pointer;
+  z-index: 1;
+
+  width: 300px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+
+  --circle-width: 80px;
+  --circle-height: 30px;
+  --circle-top: auto;
+  --circle-right: auto;
+  --circle-bottom: 0;
+  --circle-left: 50%;
+  --circle-translateX: -50%;
+}
+
+.hero img {
+  width: 100%;  
+  height: 100%;  
+  object-fit: contain; 
+  filter: brightness(0) contrast(1);
+  transition: transform 0.4s ease, filter 0.4s ease;
+  overflow: hidden;
+}
+
+
+.hero::after {
+  content: '';
+  position: absolute;
+  top: var(--circle-top);
+  right: var(--circle-right);
+  bottom: var(--circle-bottom);
+  left: var(--circle-left);
+  width: var(--circle-width);
+  height: var(--circle-height);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 8px 5px rgba(255, 255, 255, 0.5);
+  transform: translateX(var(--circle-translateX));
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+  z-index: -1;
+}
+
+.hero:hover img {
+  filter: brightness(2) contrast(1);
+}
+.hero:hover::after {
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 50px 15px rgba(255, 255, 255, 1);
+}
+
+
+.hero1 {
+  left: 7%;
+  bottom: 2%;
+  --circle-width: 180px;
+  --circle-bottom: 15px;
+  --circle-left: 50%;
+  --circle-height: 35px;
+}
+
+.hero2 {
+  left: 22%;
+  bottom: 22%;
+  --circle-width: 180px;
+  --circle-height: 35px;
+  --circle-bottom: 20px;
+  --circle-left: 55%;
+}
+
+.hero3 {
+  left: 41.1%;
+  bottom: 15%;
+  --circle-width: 150px;
+  --circle-height: 30px;
+  --circle-bottom: -8px;
+  --circle-left: 53.5%;
+}
+
+.hero4 {
+  right: 26%;
+  bottom: 25%;
+  --circle-width: 150px;
+  --circle-bottom: 5px;
+  --circle-translateX: -75px;
+  --circle-height: 40px;
+}
+
+.hero5 {
+  right: 10%;
+  bottom: 5%;
+  --circle-width: 170px;
+  --circle-height: 45px;
+  --circle-bottom: -10px;
+  --circle-right: 0;
+  --circle-left: 62%;
+}

@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elementos Decorativos - Eternal Realms</title>
+    <!-- Importar fuente medieval de Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=MedievalSharp&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Cinzel', serif;
+            color: #e7d9c4;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: 
+                linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+                url('https://images.unsplash.com/photo-1519669556878-63bdad8a1a49?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80') center/cover no-repeat,
+                #1a1208;
+            padding: 20px;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        .Portada {
+            padding: 40px;
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 15px;
+            box-shadow: 0 0 25px rgba(139, 69, 19, 0.5);
+            border: 2px solid #7a5c2d;
+            backdrop-filter: blur(4px);
+            width: 90%;
+            max-width: 1000px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .Titulo {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px;
+        }
+
+        .Titulo p {
+            font-family: 'Cinzel', serif;
+            font-weight: 900;
+            letter-spacing: 8px;
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            margin: 0;
+            text-shadow:
+                2px 2px 0px #8B4513,
+                4px 4px 0px #654321,
+                6px 6px 12px rgba(0, 0, 0, 0.8),
+                0 0 20px rgba(139, 69, 19, 0.3);
+        }
+
+        /* Sección de elementos decorativos */
+        .decoraciones-seccion {
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 15px;
+            box-shadow: 0 0 25px rgba(139, 69, 19, 0.5);
+            border: 2px solid #7a5c2d;
+            backdrop-filter: blur(4px);
+            padding: 30px;
+            width: 90%;
+            max-width: 1200px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .decoraciones-seccion h2 {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            border-bottom: 2px solid #7a5c2d;
+            padding-bottom: 15px;
+            letter-spacing: 3px;
+        }
+
+        .categoria {
+            margin-bottom: 50px;
+        }
+
+        .categoria h3 {
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            color: #f2c94c;
+            text-shadow: 0 0 10px rgba(242, 201, 76, 0.5);
+        }
+
+        .elementos-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 25px;
+            justify-content: center;
+        }
+
+        /* Iconos */
+        .icono-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            background: rgba(122, 92, 45, 0.2);
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            border: 1px solid #7a5c2d;
+            cursor: pointer;
+        }
+
+        .icono-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(139, 69, 19, 0.4);
+            background: rgba(122, 92, 45, 0.3);
+        }
+
+        .icono {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 15px;
+            filter: drop-shadow(0 0 5px rgba(255, 215, 0, 0.5));
+        }
+
+        .icono-nombre {
+            font-family: 'MedievalSharp', cursive;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        /* Botones */
+        .botones-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .boton {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-family: 'Cinzel', serif;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            border: none;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .boton:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(139, 69, 19, 0.4);
+        }
+
+        .boton:active {
+            transform: translateY(1px);
+        }
+
+        .boton-principal {
+            background: linear-gradient(to bottom, #8e6b38, #6d5127);
+            border: 1px solid #b38a5c;
+            color: #e7d9c4;
+        }
+
+        .boton-secundario {
+            background: linear-gradient(to bottom, #5e461f, #452e15);
+            border: 1px solid #7a5c2d;
+            color: #e7d9c4;
+        }
+
+        .boton-magico {
+            background: linear-gradient(to bottom, #3c5e2d, #2b4220);
+            border: 1px solid #4c8b45;
+            color: #e7d9c4;
+            box-shadow: 0 0 10px rgba(76, 139, 69, 0.3);
+        }
+
+        .boton-oro {
+            background: linear-gradient(to bottom, #bf953f, #aa771c);
+            border: 1px solid #fcf6ba;
+            color: #3c2c10;
+            font-weight: bold;
+        }
+
+        .boton-icono {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+        }
+
+        /* Flechas y Navegación */
+        .flechas-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .flecha {
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            filter: drop-shadow(0 0 5px rgba(255, 215, 0, 0.5));
+        }
+
+        .flecha:hover {
+            transform: scale(1.2);
+        }
+
+        .nav-circular {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: rgba(122, 92, 45, 0.3);
+            border: 2px solid #7a5c2d;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .nav-circular:hover {
+            background: rgba(122, 92, 45, 0.5);
+            transform: scale(1.1);
+        }
+
+        /* Divisores y Separadores */
+        .separador {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 30px 0;
+            gap: 15px;
+        }
+
+        .linea {
+            height: 2px;
+            background: linear-gradient(to right, transparent, #7a5c2d, transparent);
+            flex-grow: 1;
+        }
+
+        .simbolo-separador {
+            width: 30px;
+            height: 30px;
+            opacity: 0.7;
+        }
+
+        /* Elementos de Progreso */
+        .barra-progreso {
+            height: 20px;
+            background: rgba(34, 25, 10, 0.7);
+            border-radius: 10px;
+            border: 1px solid #7a5c2d;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .progreso {
+            height: 100%;
+            background: linear-gradient(to right, #8e6b38, #b38a5c);
+            border-radius: 10px;
+            width: 0%;
+            transition: width 1s ease;
+        }
+
+        .progreso-texto {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'MedievalSharp', cursive;
+            font-size: 0.8rem;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+        }
+
+        /* Efectos de partículas para ambiente mágico */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .particle {
+            position: absolute;
+            background: rgba(139, 69, 19, 0.3);
+            border-radius: 50%;
+            opacity: 0;
+            animation: float 15s infinite linear;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0) translateX(0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.5;
+            }
+            90% {
+                opacity: 0.3;
+            }
+            100% {
+                transform: translateY(-100vh) translateX(100px);
+                opacity: 0;
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .elementos-container {
+                grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+                gap: 15px;
+            }
+            
+            .botones-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .icono {
+                width: 40px;
+                height: 40px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Efecto de partículas -->
+    <div class="particles" id="particles"></div>
+    
+    <div class="Portada">
+        <div class="Titulo">
+            <p>Eternal Realms</p>
+        </div>
+    </div>
+    
+    <div class="decoraciones-seccion">
+        <h2>Elementos Decorativos</h2>
+        
+        <!-- Iconos -->
+        <div class="categoria">
+            <h3>Iconos Medievales</h3>
+            <div class="elementos-container">
+                <div class="icono-item">
+                    <svg class="icono" viewBox="0 0 100 100">
+                        <path fill="#e7d9c4" d="M50 15 L65 40 L95 45 L70 65 L80 95 L50 80 L20 95 L30 65 L5 45 L35 40 Z"/>
+                    </svg>
+                    <span class="icono-nombre">Estrella</span>
+                </div>
+                <div class="icono-item">
+                    <svg class="icono" viewBox="0 0 100 100">
+                        <path fill="#e7d9c4" d="M50 10 C70 10 85 25 85 50 C85 75 70 90 50 90 C30 90 15 75 15 50 C15 25 30 10 50 10 Z M50 30 C40 30 30 40 30 50 C30 60 40 70 50 70 C60 70 70 60 70 50 C70 40 60 30 50 30 Z"/>
+                    </svg>
+                    <span class="icono-nombre">Escudo</span>
+                </div>
+                <div class="icono-item">
+                    <svg class="icono" viewBox="0 0 100 100">
+                        <path fill="#e7d9c4" d="M20 20 L80 20 L80 40 L20 40 Z M30 40 L70 40 L70 80 L50 60 L30 80 Z"/>
+                    </svg>
+                    <span class="icono-nombre">Corona</span>
+                </div>
+                <div class="icono-item">
+                    <svg class="icono" viewBox="0 0 100 100">
+                        <path fill="#e7d9c4" d="M50 10 L60 40 L90 40 L65 60 L75 90 L50 75 L25 90 L35 60 L10 40 L40 40 Z"/>
+                    </svg>
+                    <span class="icono-nombre">Estrella Noble</span>
+                </div>
+                <div class="icono-item">
+                    <svg class="icono" viewBox="0 0 100 100">
+                        <path fill="#e7d9c4" d="M20 20 L80 20 L80 35 L65 50 L80 65 L80 80 L65 80 L50 65 L35 80 L20 80 L20 65 L35 50 L20 35 Z"/>
+                    </svg>
+                    <span class="icono-nombre">Calavera</span>
+                </div>
+                <div class="icono-item">
+                    <svg class="icono" viewBox="0 0 100 100">
+                        <path fill="#e7d9c4" d="M50 10 L60 30 L80 30 L65 45 L75 65 L50 55 L25 65 L35 45 L20 30 L40 30 Z M50 45 L55 60 L50 75 L45 60 Z"/>
+                    </svg>
+                    <span class="icono-nombre">Hechizo</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Botones -->
+        <div class="categoria">
+            <h3>Botones con Estilo</h3>
+            <div class="botones-container">
+                <button class="boton boton-principal">
+                    <svg class="boton-icono" viewBox="0 0 100 100">
+                        <path fill="#e7d9c4" d="M50 15 L65 40 L95 45 L70 65 L80 95 L50 80 L20 95 L30 65 L5 45 L35 40 Z"/>
+                    </svg>
+                    Botón Principal
+                </button>
+                <button class="boton boton-secundario">
+                    <svg class="boton-icono" viewBox="0 0 100 100">
+                        <path fill="#e7d9c4" d="M20 20 L80 20 L80 40 L20 40 Z M30 40 L70 40 L70 80 L50 60 L30 80 Z"/>
+                    </svg>
+                    Botón Secundario
+                </button>
+                <button class="boton boton-magico">
+                    <svg class="boton-icono" viewBox="0 0 100 100">
+                        <path fill="#e7d9c4" d="M50 10 L60 40 L90 40 L65 60 L75 90 L50 75 L25 90 L35 60 L10 40 L40 40 Z"/>
+                    </svg>
+                    Botón Mágico
+                </button>
+                <button class="boton boton-oro">
+                    <svg class="boton-icono" viewBox="0 0 100 100">
+                        <path fill="#3c2c10" d="M50 10 C70 10 85 25 85 50 C85 75 70 90 50 90 C30 90 15 75 15 50 C15 25 30 10 50 10 Z M50 30 C40 30 30 40 30 50 C30 60 40 70 50 70 C60 70 70 60 70 50 C70 40 60 30 50 30 Z"/>
+                    </svg>
+                    Botón Dorado
+                </button>
+            </div>
+        </div>
+        
+        <!-- Flechas y Navegación -->
+        <div class="categoria">
+            <h3>Flechas y Navegación</h3>
+            <div class="flechas-container">
+                <svg class="flecha" viewBox="0 0 100 100">
+                    <path fill="#e7d9c4" d="M70 50 L40 25 L40 40 L10 40 L10 60 L40 60 L40 75 Z"/>
+                </svg>
+                
+                <svg class="flecha" viewBox="0 0 100 100">
+                    <path fill="#e7d9c4" d="M30 50 L60 25 L60 40 L90 40 L90 60 L60 60 L60 75 Z" transform="rotate(180 50 50)"/>
+                </svg>
+                
+                <div class="nav-circular">
+                    <svg width="30" height="30" viewBox="0 0 100 100">
+                        <path fill="#e7d9c4" d="M70 50 L40 25 L40 40 L10 40 L10 60 L40 60 L40 75 Z"/>
+                    </svg>
+                </div>
+                
+                <div class="nav-circular">
+                    <svg width="30" height="30" viewBox="0 0 100 100">
+                        <path fill="#e7d9c4" d="M30 50 L60 25 L60 40 L90 40 L90 60 L60 60 L60 75 Z" transform="rotate(180 50 50)"/>
+                    </svg>
+                </div>
+                
+                <svg class="flecha" viewBox="0 0 100 100" style="transform: rotate(90deg);">
+                    <path fill="#e7d9c4" d="M70 50 L40 25 L40 40 L10 40 L10 60 L40 60 L40 75 Z"/>
+                </svg>
+                
+                <svg class="flecha" viewBox="0 0 100 100" style="transform: rotate(270deg);">
+                    <path fill="#e7d9c4" d="M70 50 L40 25 L40 40 L10 40 L10 60 L40 60 L40 75 Z"/>
+                </svg>
+            </div>
+        </div>
+        
+        <!-- Divisores -->
+        <div class="categoria">
+            <h3>Separadores Decorativos</h3>
+            <div class="separador">
+                <div class="linea"></div>
+                <svg class="simbolo-separador" viewBox="0 0 100 100">
+                    <path fill="#7a5c2d" d="M50 15 L65 40 L95 45 L70 65 L80 95 L50 80 L20 95 L30 65 L5 45 L35 40 Z"/>
+                </svg>
+                <div class="linea"></div>
+            </div>
+            
+            <div class="separador">
+                <div class="linea"></div>
+                <svg class="simbolo-separador" viewBox="0 0 100 100">
+                    <path fill="#7a5c2d" d="M50 10 C70 10 85 25 85 50 C85 75 70 90 50 90 C30 90 15 75 15 50 C15 25 30 10 50 10 Z M50 30 C40 30 30 40 30 50 C30 60 40 70 50 70 C60 70 70 60 70 50 C70 40 60 30 50 30 Z"/>
+                </svg>
+                <div class="linea"></div>
+            </div>
+        </div>
+        
+        <!-- Barras de Progreso -->
+        <div class="categoria">
+            <h3>Barras de Progreso</h3>
+            <div style="margin-bottom: 20px;">
+                <div class="barra-progreso">
+                    <div class="progreso" style="width: 75%;"></div>
+                    <div class="progreso-texto">Fuerza: 75%</div>
+                </div>
+            </div>
+            
+            <div style="margin-bottom: 20px;">
+                <div class="barra-progreso">
+                    <div class="progreso" style="width: 45%;"></div>
+                    <div class="progreso-texto">Magia: 45%</div>
+                </div>
+            </div>
+            
+            <div>
+                <div class="barra-progreso">
+                    <div class="progreso" style="width: 90%;"></div>
+                    <div class="progreso-texto">Defensa: 90%</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Crear efecto de partículas
+        document.addEventListener('DOMContentLoaded', function() {
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 30;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                
+                // Tamaño aleatorio
+                const size = Math.random() * 10 + 5;
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                
+                // Posición inicial aleatoria
+                particle.style.left = `${Math.random() * 100}vw`;
+                particle.style.top = `${Math.random() * 100}vh`;
+                
+                // Retraso aleatorio en la animación
+                particle.style.animationDelay = `${Math.random() * 15}s`;
+                
+                particlesContainer.appendChild(particle);
+            }
+            
+            // Efectos para los botones
+            const botones = document.querySelectorAll('.boton');
+            botones.forEach(boton => {
+                boton.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-3px)';
+                    this.style.boxShadow = '0 5px 15px rgba(139, 69, 19, 0.4)';
+                });
+                
+                boton.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                    this.style.boxShadow = 'none';
+                });
+                
+                boton.addEventListener('mousedown', function() {
+                    this.style.transform = 'translateY(1px)';
+                });
+                
+                boton.addEventListener('mouseup', function() {
+                    this.style.transform = 'translateY(-3px)';
+                });
+            });
+            
+            // Efectos para las flechas
+            const flechas = document.querySelectorAll('.flecha, .nav-circular');
+            flechas.forEach(flecha => {
+                flecha.addEventListener('mouseenter', function() {
+                    this.style.transform = 'scale(1.2)';
+                });
+                
+                flecha.addEventListener('mouseleave', function() {
+                    this.style.transform = 'scale(1)';
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
